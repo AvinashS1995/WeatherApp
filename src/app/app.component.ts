@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { MainContentComponent } from './main-content/main-content.component';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'weatherApp';
+
+  constructor(private dialog: MatDialog){}
+
+  openDialog(){
+    this.dialog.open(MainContentComponent)
+  }
 }

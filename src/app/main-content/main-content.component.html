@@ -1,0 +1,38 @@
+<!-- <h1 mat-dialog-title>Delete file</h1>
+<div mat-dialog-content>
+  Would you like to delete cat.jpeg?
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>No</button>
+  <button mat-button mat-dialog-close cdkFocusInitial>Ok</button>
+</div> -->
+
+<div [ngClass]="changeBackgroundImg()" style="height: 85vh; width: 30vw;">
+    <div class="" style="height: 69%; width: 100%; border-bottom: 1px solid black;" >
+        
+        
+        <div  class="text-center text-white pt-5">
+            <input type="text" class="form-control w-75 mb-4 ms-5 " id="inputText" [(ngModel)]="searchInput">
+
+            <div *ngIf="weatherApiAllData"><h3>{{searchInput}}</h3></div>
+            <div *ngIf="weatherApiAllData" class="mt-4" style="font-size: 50px;">{{temperature | number: '1.0-0'}}°C</div>
+            <div *ngIf="!weatherApiAllData && searchInput"><h3 class="text-danger">City Not Found</h3></div>
+            <div *ngIf="!weatherApiAllData && !searchInput"><h3 class="text-danger">Enter City Name</h3></div>
+        </div>
+    </div>
+    <div *ngIf="weatherApiAllData" class="py-4" style="height: 31%; width: 100%;">
+        <div class="text-center ">
+            <span ><img src="../../assets/hot-temp.png" height="45px" alt=""></span>
+            <span class="fs-5 pe-5">{{max_temp}}°C</span>
+            <span class="ms-5"><img src="../../assets/cold-temp.png" height="45px"alt=""></span>
+            <span class="fs-5">{{min_temp}}°C</span>
+        </div>
+
+        <div class="text-center mt-4 ">
+            <span><img src="../../assets/humidity.png" height="45px"alt=""></span>
+            <span class="fs-5 pe-5">{{humidity}}%</span>
+            <span class="ms-5"><img src="../../assets/wind.png" height="45px"alt=""></span>
+            <span class="fs-5"> {{windSpeed}}m/s</span>
+        </div>
+    </div>
+</div>
